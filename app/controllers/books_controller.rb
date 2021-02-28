@@ -1,6 +1,8 @@
-class BookController < ApplicationController
+# frozen_string_literal: true
+
+class BooksController < ApplicationController
   before_action :set_category
-  before_action :set_book, only: [:show, :update, :destroy]
+  before_action :set_book, only: %i[show update destroy]
 
   # GET /todos/:todo_id/items
   def index
@@ -18,7 +20,6 @@ class BookController < ApplicationController
     @category.books.create!(book_params)
     json_response(@category.books.last, :created)
   end
-
 
   def update
     @book.update(book_params)

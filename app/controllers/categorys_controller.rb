@@ -1,5 +1,7 @@
-class CategoryController < ApplicationController
-  before_action :set_category, only: [:show, :update, :destroy]
+
+
+class CategorysController < ApplicationController
+  before_action :set_category, only: %i[show update destroy]
 
   # GET /todos
   def index
