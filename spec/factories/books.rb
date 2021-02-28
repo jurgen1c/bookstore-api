@@ -1,7 +1,9 @@
+require 'faker'
+
 FactoryBot.define do
   factory :book do
-    title { "MyString" }
-    author { "MyString" }
+    title { Faker::Lorem.words }
+    author { Faker::Movies::StarWars.character }
     category { nil }
   end
 end
